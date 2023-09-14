@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .icon
+        {
+            height: 1em; 
+            width: 1em;
+        }
+    </style>
+    <title>ITCOURSERA</title>
+</head>
+<body>
+    <header>
+        <label>IT COURSERA</label>
+
+        <span>
+            <a href="main.html">
+                <button>Main</button>
+            </a>
+            <a href="courses.html">
+                <button>Courses</button>
+            </a>
+        </span>
+
+        <span>
+            <a href="login.html">
+                <button>Log in</button>
+            </a>
+            <a href="signup.html">
+                <button>Sign up</button>
+            </a>
+            <a href="user.html">
+                <img class="icon" src="icons/user-solid.svg" alt="user icon">
+            </a>
+        </span>
+    </header>
+
+    <main>
+        <h1>COURSES</h1>
+    
+        <div>
+            <form action="index.php", method="get", title="search">
+                <img class="icon" src = "icons/magnifying-glass-solid.svg" alt="search icon"/>
+                <label for="search">search</label>
+                <input type="search" name="search" id="search", required>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form action="index.php", method="get", title="sort">
+                <label for="sort">Sort by</label>
+                <select name="Sortby" id="Sortby">
+                    <option value="Popular">Popular</option>
+                    <option value="Rating">Rating</option>
+                    <option value="Newest" selected>Newest</option>
+                    <option value="Price (low)">Price (low)</option>
+                    <option value="Price (high)">Price (high)</option>
+                </select>
+            </form>
+
+            <form action="index.php", method="get", title="filter">
+                <label for="Topic">Topic</label>
+                <select name="Topic" id="Topic">
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Sience">Data Sience</option>
+                    <option value="Programming Languages" selected>Programming Languages</option>
+                    <option value="Game Development">Game Development</option>
+                    <option value="Mobile Development">Mobile Development</option>
+                </select>
+
+                <label for="Rating">Rating</label>
+                <select name="Rating" id="Rating">
+                    <option value="4.5+">4.5+</option>
+                    <option value="4+">4+</option>
+                    <option value="3.5+">3.5+</option>
+                    <option value="3+">3+</option>
+                    <option value="0+" selected>0+</option>
+                </select>
+
+                <label for="Duration">Duration</label>
+                <select name="Duration" id="Duration">
+                    <option value="1-3 month">1-3 month</option>
+                    <option value="1-4 weeks">1-4 weeks</option>
+                    <option value="1-7 days">1-7 days</option>
+                    <option value="12-24 hours">12-24 hours</option>
+                    <option value="8-12 hours">8-12 hours</option>
+                    <option value="4-8 hours">4-8 hours</option>
+                    <option value="2-4 hours">2-4 hours</option>
+                    <option value="0-2 hours", selected>0-2 hours</option>
+                </select>
+
+                <label for="Price">Price</label>
+                <select name="Price" id="Price">
+                    <option value="Paid">Paid</option>
+                    <option value="Free">Free</option>
+                </select>
+
+                <input type="reset">
+                <input type="submit">
+            </form>
+        </div>
+        <br>
+        <button>
+            <a href="coursePage.html">
+                <button>Python Course</button>
+            </a>
+        </button>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

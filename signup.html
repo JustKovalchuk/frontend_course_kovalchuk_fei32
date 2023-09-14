@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .icon
+        {
+            height: 1em; 
+            width: 1em;
+        }
+    </style>
+    <title>ITCOURSERA</title>
+</head>
+<body>    
+    <header>
+        <label>IT COURSERA</label>
+
+        <span>
+            <a href="main.html">
+                <button>Main</button>
+            </a>
+            <a href="courses.html">
+                <button>Courses</button>
+            </a>
+        </span>
+
+        <span>
+            <a href="login.html">
+                <button>Log in</button>
+            </a>
+            <a href="signup.html">
+                <button>Sign up</button>
+            </a>
+            <a href="user.html">
+                <img class="icon" src="icons/user-solid.svg" alt="user icon">
+            </a>
+        </span>
+    </header>
+
+    <main>
+        <h1>SIGN UP COURSERA</h1>
+
+        <div>
+            <div>
+                <form action="index.php">
+                    <div>
+                        <label for="first name">First name</label>
+                        <input type="text", id="first name" required>
+                        <br>
+                        <label for="last name">Last name</label>
+                        <input type="text", id="last name" required>
+                        <br>
+                        
+                        <br>
+
+                        <label for="email">Email</label>
+                        <input type="email", id="email" required>
+                        <br>
+                        <label for="phone">Email</label>
+                        <input type="tel", id="phone", pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
+                        <br>
+                        <label for="password">Password</label>
+                        <input type="password", id="password" required>
+                    </div>
+                    <br>
+                    <input type="submit", value="LOG IN">
+                </form>
+                <br>
+                <span>
+                    <label>ALREADY HAVE AN ACCOUNT?</label>
+                    <a href="login.html">
+                        <label><b><u>LOG IN</u> </b></label>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
