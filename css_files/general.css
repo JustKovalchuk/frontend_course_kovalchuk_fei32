@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --main: #E4DCFF;
+    --main-light: #ffffff;
+    --main-dark: #3D335F;
+    --alt-light: #EBE6B9;
+    --alt-dark: #75623E;
+    --transparent-color: rgba(0,0,0,0);
+
+    --font-family-main:"Montserrat";
+    --font-width-regular: 400;
+    --font-width-medium: 500;
+    --font-width-bold: 700;
+    --font-size-p: 20px;
+    --font-size-min: 14px;
+    --font-size-h1: 40px;
+    --font-size-h2: 32px;
+    --font-size-h3: 26px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+
+    --course-box-border-radius: 25px;
+}
+
+*{
+    font-family: var(--font-family-main);
+    font-weight: var(--font-width-regular);
+    font-size: var(--font-size-min);
+}
+
+header {
+    background: var(--main-dark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2%;
+}
+body {
+    margin: 0px;
+    background: var(--main-light);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+    background: var(--main-dark);
+    height: 15%;
+    min-height: 15%;
+}
+
+p{
+    font-family: var(--font-family-main);
+    font-weight: var(--font-width-regular);
+    font-size: var(--font-size-p);
+}
+label{
+    font-family: var(--font-family-main);
+    font-weight: var(--font-width-regular);
+    font-size: var(--font-size-min);
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+    color: #3D335F;
+    font-family: var(--font-family-main);
+    font-weight: var(--font-width-bold);
+    text-align: center;
+}
+h1{
+    font-size: var(--font-size-h1);
+}
+h2{
+    font-size: var(--font-size-h2);
+}
+h3{
+    font-size: var(--font-size-h3);
+}
+h4{
+    font-size: var(--font-size-h4);
+    text-align: left;
+}
+h5{
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-width-medium);
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    color: var(--main-dark);
+    
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-min);
+
+    border-radius: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    border: none;
+}
+.header-button{
+    background-color: var(--transparent-color);
+    color: var(--main-light);
+}
+.header-user-button{
+    background-color: var(--alt-light);
+    color: var(--alt-dark);
+
+    font-weight: var(--font-width-bold);
+
+    height: 30px;
+}
+/**/
+.icon
+{
+    height: 1em; 
+    width: 1em;
+}
+.name-label{
+    font-family: var(--font-family-main);
+    font-weight: var(--font-width-bold);
+    font-size: var(--font-size-p);
+    
+    color: var(--main-light);
+}
+
+#header-right-span{
+    margin-left: auto;
+}
+#header-left-span{
+    margin-right: auto;
+}
+
+.account-info-container{
+    padding: 2%;
+    width: max-content;
+    background-color: var(--alt-light);
+    border-radius: var(--course-box-border-radius);
+}

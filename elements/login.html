@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script src="/js_files/header_footer_controller.js"></script>
+
+    <link rel="stylesheet" href="/css_files/alignment.css">
+    <link rel="stylesheet" href="/css_files/general.css">
+    <title>ITCOURSERA</title>
+</head>
+<body>
+    <header id="header"></header>
+
+    <main>
+        <h1>LOG IN COURSERA</h1>
+
+        <div  class="center-box">
+            <div>
+                <div>
+                    <button>
+                        <img class="icon" src="/icons/google.png" alt="user icon">
+                    </button>
+                    <label for="">Continue with Google</label>
+                </div>
+                <form action="index.php">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email", id="email" required>
+                        <br>
+                        <label for="password">Password</label>
+                        <input type="password", id="password" required>
+                    </div>
+                    
+                    <br>
+                    <input type="submit", value="LOG IN">
+                </form>
+                <br>
+                <span>
+                    <label>DON'T HAVE AN ACCOUNT?</label>
+                    <a href="html/signup.html">
+                        <label><b><u>SIGN UP</u></b></label>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer"></footer>
+</body>
+</html>

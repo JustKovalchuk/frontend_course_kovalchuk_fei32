@@ -1,0 +1,30 @@
+.search-bar{
+    overflow: hidden;
+    margin: 0% 30%;
+    height: auto;
+    border-radius: var(--course-box-border-radius);
+    background-color: var(--main);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar input{
+    background-color: var(--transparent-color);
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: none;
+    color: var(--main-dark);
+    font-weight: var(--font-width-medium);
+}
+.search-bar input::placeholder{
+    color: var(--main-dark);
+    font-weight: var(--font-width-medium);
+}
+.search-bar input:focus{
+    outline: none;
+}
+.search-bar .icon{
+    padding: 2%;
+}

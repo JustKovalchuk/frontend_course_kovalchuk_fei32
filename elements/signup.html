@@ -3,45 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .icon
-        {
-            height: 1em; 
-            width: 1em;
-        }
-    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script src="/js_files/header_footer_controller.js"></script>
+
+    <link rel="stylesheet" href="/css_files/alignment.css">
+    <link rel="stylesheet" href="/css_files/general.css">
     <title>ITCOURSERA</title>
 </head>
 <body>    
-    <header>
-        <label>IT COURSERA</label>
-
-        <span>
-            <a href="main.html">
-                <button>Main</button>
-            </a>
-            <a href="courses.html">
-                <button>Courses</button>
-            </a>
-        </span>
-
-        <span>
-            <a href="login.html">
-                <button>Log in</button>
-            </a>
-            <a href="signup.html">
-                <button>Sign up</button>
-            </a>
-            <a href="user.html">
-                <img class="icon" src="icons/user-solid.svg" alt="user icon">
-            </a>
-        </span>
-    </header>
+    <header id="header"></header>
 
     <main>
         <h1>SIGN UP COURSERA</h1>
 
-        <div>
+        <div class="center-box">
             <div>
                 <form action="index.php">
                     <div>
@@ -64,12 +43,12 @@
                         <input type="password", id="password" required>
                     </div>
                     <br>
-                    <input type="submit", value="LOG IN">
+                    <input type="submit", value="SIGN UP">
                 </form>
                 <br>
                 <span>
                     <label>ALREADY HAVE AN ACCOUNT?</label>
-                    <a href="login.html">
+                    <a href="/elements/login.html">
                         <label><b><u>LOG IN</u> </b></label>
                     </a>
                 </span>
@@ -78,7 +57,6 @@
 
     </main>
 
-    <footer>
-    </footer>
+    <footer id="footer"></footer>
 </body>
 </html>

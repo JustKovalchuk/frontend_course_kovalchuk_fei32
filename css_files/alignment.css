@@ -1,0 +1,26 @@
+.center-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hor-center-element{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vert-center-element{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.hor-flex-container{
+    display: flex;
+    justify-content: center;
+}
+
+.vert-flex-container{
+    display: flex;
+    align-items: center;
+}

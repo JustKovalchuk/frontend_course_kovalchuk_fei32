@@ -1,0 +1,31 @@
+.course-box{
+    border-radius: var(--course-box-border-radius);
+    border-width: 0px;
+    background-color: var(--main);
+    overflow: hidden;
+    margin: 2%;
+}
+.course-box-items{
+    padding: 1%;
+    margin: 0% 5%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+.course-img-container{
+    height: 50%;
+}
+.course-img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.course-name{
+    display: flex;
+    margin: 0;
+}
+.author-name{
+    margin: 0;
+}
+.course-box-author{
+    display: flex;
+}

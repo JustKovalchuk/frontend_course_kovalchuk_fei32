@@ -3,46 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .icon
-        {
-            height: 1em; 
-            width: 1em;
-        }
-    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script src="/js_files/header_footer_controller.js"></script>
+
+    <link rel="stylesheet" href="/css_files/alignment.css">
+    <link rel="stylesheet" href="/css_files/general.css">
     <title>ITCOURSERA</title>
 </head>
-<body>    
-    <header>
-        <label>IT COURSERA</label>
-
-        <span>
-            <a href="main.html">
-                <button>Main</button>
-            </a>
-            <a href="courses.html">
-                <button>Courses</button>
-            </a>
-        </span>
-
-        <span>
-            <a href="login.html">
-                <button>Log in</button>
-            </a>
-            <a href="signup.html">
-                <button>Sign up</button>
-            </a>
-            <a href="user.html">
-                <img class="icon" src="icons/user-solid.svg" alt="user icon">
-            </a>
-        </span>
-    </header>
+<body>
+    <header id="header"></header>
 
     <main>
         <h1>Python Development</h1>
 
         <div title="Course Info">
-            <img src="images/course-cover.png" alt="Course cover image">
+            <img src="/images/course-cover.png" alt="Course cover image">
             
             <h2>Course info</h2>
             <div>
@@ -108,12 +87,9 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <button>Enroll now</button>
-        </div>
+        <button class="hor-center-element">Enroll now</button>
     </main>
 
-    <footer>
-    </footer>
+    <footer id="footer"></footer>
 </body>
 </html>
