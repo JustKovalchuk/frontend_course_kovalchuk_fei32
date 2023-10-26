@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="/css_files/alignment.css">
     <link rel="stylesheet" href="/css_files/general.css">
+    <link rel="stylesheet" href="/css_files/forms.css">
     <title>ITCOURSERA</title>
 </head>
 <body>    
@@ -21,39 +22,38 @@
     <main>
         <h1>SIGN UP COURSERA</h1>
 
-        <div class="center-box">
-            <div>
-                <form action="index.php">
-                    <div>
-                        <label for="first name">First name</label>
-                        <input type="text", id="first name" required>
-                        <br>
-                        <label for="last name">Last name</label>
-                        <input type="text", id="last name" required>
-                        <br>
-                        
-                        <br>
-
-                        <label for="email">Email</label>
-                        <input type="email", id="email" required>
-                        <br>
-                        <label for="phone">Phone</label>
-                        <input type="tel", id="phone", pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
-                        <br>
-                        <label for="password">Password</label>
-                        <input type="password", id="password" required>
-                    </div>
-                    <br>
-                    <input type="submit", value="SIGN UP">
-                </form>
-                <br>
-                <span>
-                    <label>ALREADY HAVE AN ACCOUNT?</label>
-                    <a href="/elements/login.html">
-                        <label><b><u>LOG IN</u> </b></label>
-                    </a>
-                </span>
+        <div class="info_container hor-center-element">
+            <div class="hor-flex-container input-div">
+                <label for="first name">First name</label>
+                <input type="text", id="first name" required>
             </div>
+            <div class="hor-flex-container input-div">
+                <label for="last name">Last name</label>
+                <input type="text", id="last name" required>
+            </div>
+            
+            <br>
+            <div class="hor-flex-container input-div">
+                <label for="email">Email</label>
+                <input type="email", id="email" required>
+            </div>
+            <div class="hor-flex-container input-div">
+                <label for="phone">Phone</label>
+                <input type="tel", id="phone", pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
+            </div>
+            <div class="hor-flex-container input-div">
+                <label for="password">Password</label>
+                <input type="password", id="password" required>
+            </div>
+        </div>
+        <div class="hor-flex-container">
+            <input class="form-button" type="submit", value="SIGN UP">
+        </div>
+        <div class="hor-flex-container">
+            <label>ALREADY HAVE AN ACCOUNT? </label>
+            <a href="/elements/login.html">
+                <u><label class="log-sign-label"> LOG IN</label></u>
+            </a>
         </div>
 
     </main>

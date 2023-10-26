@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="/css_files/alignment.css">
     <link rel="stylesheet" href="/css_files/general.css">
+    <link rel="stylesheet" href="/css_files/forms.css">
     <title>ITCOURSERA</title>
 </head>
 <body>
@@ -21,34 +22,32 @@
     <main>
         <h1>LOG IN COURSERA</h1>
 
-        <div  class="center-box">
-            <div>
-                <div>
-                    <button>
-                        <img class="icon" src="/icons/google.png" alt="user icon">
-                    </button>
-                    <label for="">Continue with Google</label>
-                </div>
-                <form action="index.php">
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email", id="email" required>
-                        <br>
-                        <label for="password">Password</label>
-                        <input type="password", id="password" required>
-                    </div>
-                    
-                    <br>
-                    <input type="submit", value="LOG IN">
-                </form>
-                <br>
-                <span>
-                    <label>DON'T HAVE AN ACCOUNT?</label>
-                    <a href="html/signup.html">
-                        <label><b><u>SIGN UP</u></b></label>
-                    </a>
-                </span>
+        <div class="hor-flex-container">
+            <button class="form-button-alt">
+                <img class="icon" src="/icons/google.png" alt="user icon">
+                Continue with Google
+            </button>
+        </div>
+        <div class="info_container hor-center-element">
+            <div class="hor-flex-container input-div">
+                <label for="email">Email</label>
+                <input type="email", id="email" required>
             </div>
+            <div class="hor-flex-container input-div">
+                <label for="password">Password</label>
+                <input type="password", id="password" required>
+            </div>
+        </div>
+        
+        <div class="hor-flex-container">
+            <input class="form-button" type="submit", value="LOG IN">
+        </div>
+        </div>
+        <div  class="hor-flex-container">
+            <label>DON'T HAVE AN ACCOUNT? </label>
+            <a href="html/signup.html">
+                <u><label class="log-sign-label"> SIGN UP</label></u>
+            </a>
         </div>
 
     </main>

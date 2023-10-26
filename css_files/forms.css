@@ -1,0 +1,54 @@
+.info_container{
+    padding: 2% 5%;
+    width: max-content;
+    background-color: var(--alt-light);
+    border-radius: var(--container-border-radius);
+}
+.info_container label{
+    color: var(--alt-dark);
+    font-weight: var(--font-width-semibold);
+}
+
+.form-button-alt{
+    border: none;
+    background: var(--alt-light);
+
+    color: var(--alt-dark);
+    font-weight: var(--font-width-bold);
+    font-size: var(--font-size-p);
+    padding: 0.5% 3%;
+    margin: 1%;
+}
+.form-button{
+    border: none;
+    background: var(--alt-dark);
+
+    color: var(--alt-light);
+    font-weight: var(--font-width-bold);
+    font-size: var(--font-size-p);
+    padding: 0.5% 3%;
+    margin: 1%;
+}
+
+.info_container div{
+    margin: 3% 0%;
+}
+
+.input-div{
+    justify-content: space-between;
+}
+
+.info_container input{
+    align-self: flex-end;
+    border: none;
+    height: 20px;
+    width: 200px;
+
+    border-radius: var(--input-border-radius);
+    margin-left: 25px;
+}
+
+.log-sign-label{
+    font-weight: var(--font-width-bold);
+    color: #75623E;
+}

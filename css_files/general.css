@@ -10,6 +10,7 @@
     --font-family-main:"Montserrat";
     --font-width-regular: 400;
     --font-width-medium: 500;
+    --font-width-semibold: 600;
     --font-width-bold: 700;
     --font-size-p: 20px;
     --font-size-min: 14px;
@@ -19,7 +20,9 @@
     --font-size-h4: 18px;
     --font-size-h5: 14px;
 
+    --input-border-radius: 50px;
     --course-box-border-radius: 25px;
+    --container-border-radius: 0px;
 }
 
 *{
@@ -89,6 +92,11 @@ h5{
     text-align: left;
 }
 
+label{
+    color: var(--main-dark);
+    font-weight: var(--font-width-medium);
+}
+
 a{
     text-decoration: none;
 }
@@ -99,7 +107,6 @@ button{
     font-family: var(--font-family-main);
     font-size: var(--font-size-min);
 
-    border-radius: 16px;
     padding-left: 15px;
     padding-right: 15px;
 
@@ -115,10 +122,10 @@ button{
 
     font-weight: var(--font-width-bold);
 
+    border-radius: 16px;
     height: 30px;
 }
 
-/**/
 .icon
 {
     height: 1em; 
@@ -139,9 +146,6 @@ button{
     margin-right: auto;
 }
 
-.account-info-container{
-    padding: 2%;
-    width: max-content;
-    background-color: var(--alt-light);
-    border-radius: var(--course-box-border-radius);
+.container1{
+    background-color: var(--alt-dark);
 }
