@@ -49,6 +49,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+main{
+    margin: 5%;
+}
 footer {
     margin-top: auto;
     background: var(--main-dark);
@@ -165,4 +168,12 @@ button{
 }
 .author-container{
     display: flex;
+}
+
+
+
+.courses-table{
+    display: flex;
+    flex-wrap: wrap;
+    
 }

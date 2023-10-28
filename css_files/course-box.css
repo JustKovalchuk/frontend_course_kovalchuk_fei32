@@ -1,9 +1,13 @@
+.course-box-container{
+    max-width: 33%;
+    min-width: 20%;
+}
 .course-box{
     border-radius: var(--course-box-border-radius);
     border-width: 0px;
     background-color: var(--main);
     overflow: hidden;
-    margin: 2%;
+    margin: 5%;
 }
 .course-box-items{
     padding: 1%;
