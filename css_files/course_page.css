@@ -1,5 +1,52 @@
+.course-page-container{
+    background-color: var(--main);
+    margin: 5%;
+}
+.course-page-header-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.course-page-header-container-child{
+    width: 44%;
+    padding: 3%;
+}
+.course-page-container-child{
+    width: 94%;
+    padding: 3%;
+}
+
+#course-page-img{
+    max-width: 100%;
+    max-height: auto;
+}
+#course-page-description-text{
+    text-align: justify;
+}
+#course-page-author-container{
+    flex-direction: row-reverse;
+}
+#course-page-price-text{
+    text-align: right;
+}
+
+#enroll-button{
+    background-color: var(--main-dark);
+    color: var(--alt-light);
+    font-size: var(--font-size-p);
+    font-weight: var(--font-width-bold);
+
+    height: 50px;
+    width: 200px;
+}
+
+
+
+/* rating */
 .rating:not(:checked) > input {
     appearance: none;
+}
+.rating{
+    height: 40px;
 }
   
 .rating:not(:checked) > label {
@@ -28,4 +75,59 @@
 
 .rating > input:checked ~ label {
     color: #ffa723;
+}
+
+
+
+/* accordion */
+#accordion{
+    padding-left: 0%;
+    border-style:solid;
+    border-width: 1px;
+    border-color: var(--gray-light);
+}
+#accordion ul{
+    padding-left: 3%;
+    list-style: none;
+    width: 100%;
+}
+#accordion li{
+    list-style: none;
+    width: 100%;
+}
+
+.accordion-header{
+    display: flex;
+    justify-content: left;
+    border-style:solid;
+    height: 50px;
+    border-width: 1px 0px 1px 0px ;
+    border-color: var(--gray-light);
+}
+.accordion-header label{
+    font-weight: var(--font-width-semibold);
+    width: 97%;
+    padding-left: 3%;
+}
+#accordion li label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: var(--font-size-p);
+}
+
+#accordion input[type="radio"]{
+    display: none;
+}
+
+.accordion-content{
+    margin: px;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+#accordion input[type="radio"]:checked +.accordion-content{
+    margin: 2%;
+    max-height: fit-content;
 }

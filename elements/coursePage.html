@@ -21,86 +21,100 @@
 
     <main>
         <h1>Python Development</h1>
-
-        <div сlass="container1" title="Course Info">
-            <img src="/images/course-cover.png" alt="Course cover image">
-            
-            <h2>Course info</h2>
-            <div>
-                <h3>Description</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate placeat ipsa repudiandae qui provident mollitia praesentium ipsum sed culpa quae. Officiis facere voluptatem in inventore repellat doloremque voluptate sunt recusandae!</p>
+        <div class="course-page-container">
+            <div class="course-page-header-container">
+                <div class="course-page-header-container-child">
+                    <div title="Course Info">
+                        <div>
+                            <h3>Description</h3>
+                            <p id="course-page-description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate placeat ipsa repudiandae qui provident mollitia praesentium ipsum sed culpa quae. Officiis facere voluptatem in inventore repellat doloremque voluptate sunt recusandae!</p>
+                        </div>
+                        <div>
+                            <h3>What you will learn</h3>
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="course-page-header-container-child">
+                    <img id="course-page-img" src="/images/course-cover.png" alt="Course cover image">
+                    <div class="author-container" id="course-page-author-container">
+                        <img class="icon" src="/icons/user-solid.svg" alt="user icon">
+                        <p class="author-name">Stanford University</p>
+                    </div>
+                    <div class="rating">
+                        <input value="5" name="rate" id="star5" type="radio">
+                        <label title="text" for="star5"></label>
+                        <input value="4" name="rate" id="star4" type="radio">
+                        <label title="text" for="star4"></label>
+                        <input value="3" name="rate" id="star3" type="radio" checked="">
+                        <label title="text" for="star3"></label>
+                        <input value="2" name="rate" id="star2" type="radio">
+                        <label title="text" for="star2"></label>
+                        <input value="1" name="rate" id="star1" type="radio">
+                        <label title="text" for="star1"></label>
+                    </div>
+                
+                    <div>
+                        <p id="course-page-price-text">19.99$</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3>What you will learn</h3>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+            <hr>
+            <div class="course-page-container-child">
+                <h2>Content</h2>
+                <ul id="accordion">
+                    <li>
+                        <div class="accordion-header">
+                            <label for="first">Intro </label>
+                        </div>
+                        <input type="radio" name="accordion" id="first">
+                        
+                        <div class="accordion-content"> 
+                            <ul>
+                                <li>Part1</li>
+                                <li>Part2</li>
+                                <li>Part3</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion-header">
+                            <label for="second">Main</label>
+                        </div>
+                        <input type="radio" name="accordion" id="second">
+
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Part1</li>
+                                <li>Part2</li>
+                                <li>Part3</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion-header">
+                            <label for="third">Final</label>
+                        </div>
+                        <input type="radio" name="accordion" id="third">
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Part1</li>
+                                <li>Part2</li>
+                                <li>Part3</li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <div>
-                <h3>Author</h3>
-                <p>Stanford University</p>
-            </div>
-            <div>
-                <h3>Rating</h3>
-                <div class="rating">
-                    <input value="5" name="rate" id="star5" type="radio">
-                    <label title="text" for="star5"></label>
-                    <input value="4" name="rate" id="star4" type="radio">
-                    <label title="text" for="star4"></label>
-                    <input value="3" name="rate" id="star3" type="radio" checked="">
-                    <label title="text" for="star3"></label>
-                    <input value="2" name="rate" id="star2" type="radio">
-                    <label title="text" for="star2"></label>
-                    <input value="1" name="rate" id="star1" type="radio">
-                    <label title="text" for="star1"></label>
-                  </div>
-            </div>
-            <div>
-                <h3>Price</h3>
-                <p>19.99$</p>
+            <div class="course-page-container-child">
+                <button class="hor-center-element" id="enroll-button">Enroll now</button>
             </div>
         </div>
-        <div title="Course Content">
-            <h2>Content</h2>
-            <ul id="accordion">
-                <li>
-                    <label for="first">Intro</label>
-                    <input type="radio", name="accordion", id="first">
-                    <div> 
-                        <ul>
-                            <li>Part1</li>
-                            <li>Part2</li>
-                            <li>Part3</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <label for="second">Main</label>
-                    <input type="radio", name="accordion", id="second">
-                    <div>
-                        <ul>
-                            <li>Part1</li>
-                            <li>Part2</li>
-                            <li>Part3</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <label for="third">Final</label>
-                    <input type="radio", name="accordion", id="third">
-                    <div>
-                        <ul>
-                            <li>Part1</li>
-                            <li>Part2</li>
-                            <li>Part3</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <button class="hor-center-element">Enroll now</button>
     </main>
 
     <footer id="footer"></footer>

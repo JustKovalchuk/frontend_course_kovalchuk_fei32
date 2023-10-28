@@ -6,6 +6,7 @@
     --alt-light: #EBE6B9;
     --alt-dark: #75623E;
     --transparent-color: rgba(0,0,0,0);
+    --gray-light: #b3a9d6;
 
     --font-family-main:"Montserrat";
     --font-width-regular: 400;
@@ -22,6 +23,7 @@
 
     --input-border-radius: 50px;
     --course-box-border-radius: 25px;
+    --button-border-radius: 16px;
     --container-border-radius: 0px;
 }
 
@@ -81,14 +83,18 @@ h2{
 }
 h3{
     font-size: var(--font-size-h3);
+    font-weight: var(--font-width-semibold);
+    text-align: left;
 }
 h4{
     font-size: var(--font-size-h4);
+    font-weight: var(--font-width-semibold);
     text-align: left;
 }
 h5{
     font-size: var(--font-size-h5);
     font-weight: var(--font-width-medium);
+    font-weight: var(--font-width-semibold);
     text-align: left;
 }
 
@@ -100,8 +106,16 @@ label{
 a{
     text-decoration: none;
 }
+li{
+    font-size: var(--font-size-p);
+}
+
+input[type="submit"],input[type="reset"]{
+    cursor: pointer;
+}
 
 button{
+    cursor: pointer;
     color: var(--main-dark);
     
     font-family: var(--font-family-main);
@@ -122,7 +136,7 @@ button{
 
     font-weight: var(--font-width-bold);
 
-    border-radius: 16px;
+    border-radius: var(--button-border-radius);
     height: 30px;
 }
 
@@ -146,6 +160,9 @@ button{
     margin-right: auto;
 }
 
-.container1{
-    background-color: var(--alt-dark);
+.author-name{
+    margin: 0;
+}
+.author-container{
+    display: flex;
 }
