@@ -1,14 +1,54 @@
-<span id="header-left-span">
-    <label class="name-label">IT COURSERA</label>
-</span>
+<!DOCTYPE html>
+<html lang="en">
 
-<span>
-    <a href="/elements/main.html"><button class="header-button">Main</button></a>
-    <a href="/elements/courses.html"><button class="header-button">Courses</button></a>
-</span>
+<head>
+    <link rel="stylesheet" href="/css_files/general.css">
+    <link href="/css_files/main.min.css" rel="stylesheet">
+</head>
 
-<span id="header-right-span">
-    <a href="/elements/login.html"><button class="header-user-button">Log in</button></a>
-    <a href="/elements/signup.html"><button class="header-user-button">Sign up</button></a>
-    <a href="/elements/user.html"><img class="icon" src="/icons/user-solid.svg" alt="user icon"></a>
-</span>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/elements/main.html">
+                    <!-- <img height="70px" src="/icons/main-logo.png" alt=""> -->
+                    <strong>ITHUB</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- <div class="container d-md-none">
+                    <a class="navbar-brand" href="/elements/main.html"><strong>ITCOURSERA</strong></a>
+                </div> -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" aria-current="page" href="/elements/login.html">Log in</a>
+                        </li>
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" aria-current="page" href="/elements/login.html">Sign up</a>
+                        </li>
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" aria-current="page" href="/elements/user.html">Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <form class="d-none d-md-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="container d-flex justify-content-end">
+                <span class="d-none d-md-inline">
+                    <a class="btn btn-warning rounded-pill" href="/elements/login.html">Log in</a>
+                    <a class="btn btn-warning rounded-pill" href="/elements/signup.html">Sign up</a>
+                    <a class="btn btn-warning rounded-pill" href="/elements/user.html"><img class="icon" src="/icons/user-solid.svg" alt="user icon"></a>
+                </span>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>

@@ -2,9 +2,9 @@
 :root {
     --main: #E4DCFF;
     --main-light: #ffffff;
-    --main-dark: #3D335F;
-    --alt-light: #EBE6B9;
-    --alt-dark: #75623E;
+    --main-dark: #6f42c1;
+    --alt-light: #fde18d;
+    --alt-dark: #3c351c;
     --transparent-color: rgba(0,0,0,0);
     --gray-light: #b3a9d6;
 
@@ -28,20 +28,9 @@
 }
 
 *{
-    font-family: var(--font-family-main);
     font-weight: var(--font-width-regular);
-    font-size: var(--font-size-min);
 }
 
-header {
-    background: var(--main-dark);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 2%;
-}
 body {
     margin: 0px;
     background: var(--main-light);
@@ -52,51 +41,37 @@ body {
 main{
     margin: 5%;
 }
-footer {
+#footer {
     margin-top: auto;
-    background: var(--main-dark);
-    height: 15%;
-    min-height: 15%;
 }
 
 p{
-    font-family: var(--font-family-main);
     font-weight: var(--font-width-regular);
-    font-size: var(--font-size-p);
 }
 label{
-    font-family: var(--font-family-main);
     font-weight: var(--font-width-regular);
-    font-size: var(--font-size-min);
 }
 
 
 
 h1, h2, h3, h4, h5, h6{
     color: #3D335F;
-    font-family: var(--font-family-main);
     font-weight: var(--font-width-bold);
     text-align: center;
 }
 h1{
-    font-size: var(--font-size-h1);
 }
 h2{
-    font-size: var(--font-size-h2);
 }
 h3{
-    font-size: var(--font-size-h3);
     font-weight: var(--font-width-semibold);
     text-align: left;
 }
 h4{
-    font-size: var(--font-size-h4);
     font-weight: var(--font-width-semibold);
     text-align: left;
 }
 h5{
-    font-size: var(--font-size-h5);
-    font-weight: var(--font-width-medium);
     font-weight: var(--font-width-semibold);
     text-align: left;
 }
@@ -121,7 +96,6 @@ button{
     cursor: pointer;
     color: var(--main-dark);
     
-    font-family: var(--font-family-main);
     font-size: var(--font-size-min);
 
     padding-left: 15px;
@@ -141,6 +115,9 @@ button{
 
     border-radius: var(--button-border-radius);
     height: 30px;
+}
+#page-selector{
+    margin-top: auto;
 }
 
 .icon
