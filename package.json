@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajax": "^0.0.4",
     "bootstrap": "^5.3.2"
   }
 }

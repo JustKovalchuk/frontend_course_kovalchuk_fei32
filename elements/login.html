@@ -31,22 +31,25 @@
                 Continue with Google
             </button>
         </div>
-        <div class="info_container hor-center-element">
-            <div class="hor-flex-container input-div">
-                <label for="email">Email</label>
-                <input type="email", id="email" required>
+        <form>
+            <div id="login-form" class="info_container hor-center-element">
+                <div class="hor-flex-container input-div">
+                    <label for="email">Email</label>
+                    <input placeholder="email@address.com" type="email" id="login-form-email" required>
+                </div>
+                <div class="hor-flex-container input-div">
+                    <label for="password">Password</label>
+                    <input type="password" id="login-form-password" required>
+                </div>
             </div>
-            <div class="hor-flex-container input-div">
-                <label for="password">Password</label>
-                <input type="password", id="password" required>
+
+            <div class="hor-flex-container">
+                <button id="login-button" class="form-button">LOG IN</button>
             </div>
-        </div>
+        </form>
         
+        </div>
         <div class="hor-flex-container">
-            <input class="form-button" type="submit", value="LOG IN">
-        </div>
-        </div>
-        <div  class="hor-flex-container">
             <label>DON'T HAVE AN ACCOUNT? </label>
             <a href="html/signup.html">
                 <u><label class="log-sign-label"> SIGN UP</label></u>
@@ -57,4 +60,5 @@
 
     <footer id="footer"></footer>
 </body>
+<script src="/js_files/signup.js"></script>
 </html>

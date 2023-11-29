@@ -2,7 +2,7 @@
 :root {
     --main: #E4DCFF;
     --main-light: #ffffff;
-    --main-dark: #6f42c1;
+    --main-dark: #3D30A2;
     --alt-light: #fde18d;
     --alt-dark: #3c351c;
     --transparent-color: rgba(0,0,0,0);
@@ -55,13 +55,9 @@ label{
 
 
 h1, h2, h3, h4, h5, h6{
-    color: #3D335F;
+    color: var(--main-dark);
     font-weight: var(--font-width-bold);
     text-align: center;
-}
-h1{
-}
-h2{
 }
 h3{
     font-weight: var(--font-width-semibold);

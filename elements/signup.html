@@ -27,33 +27,37 @@
     <main>
         <h1>SIGN UP COURSERA</h1>
 
-        <div class="info_container hor-center-element">
-            <div class="hor-flex-container input-div">
-                <label for="first name">First name</label>
-                <input type="text" , id="first name" required>
-            </div>
-            <div class="hor-flex-container input-div">
-                <label for="last name">Last name</label>
-                <input type="text" , id="last name" required>
+        <form>
+            <div id="signup-form" class="info_container hor-center-element">
+                <div class="hor-flex-container input-div">
+                    <label for="first name">First name</label>
+                    <input id="signup-form-first-name" type="text" placeholder="James" required>
+                </div>
+                <div class="hor-flex-container input-div">
+                    <label for="last name">Last name</label>
+                    <input id="signup-form-last-name" type="text" placeholder="Anderson" required>
+                </div>
+    
+                <br>
+                <div class="hor-flex-container input-div">
+                    <label for="email">Email</label>
+                    <input id="signup-form-email" type="email" placeholder="email@address.com" required>
+                </div>
+                <div class="hor-flex-container input-div">
+                    <label for="phone">Phone</label>
+                    <input id="signup-form-phone" type="tel" placeholder="555 555 5555" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
+                </div>
+                <div class="hor-flex-container input-div">
+                    <label for="password">Password</label>
+                    <input id="signup-form-password" type="password" required>
+                </div>
             </div>
 
-            <br>
-            <div class="hor-flex-container input-div">
-                <label for="email">Email</label>
-                <input type="email" , id="email" required>
+            <div class="hor-flex-container">
+                <button id="signup-button" class="form-button">SIGN UP</button>
             </div>
-            <div class="hor-flex-container input-div">
-                <label for="phone">Phone</label>
-                <input type="tel" , id="phone" , pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required>
-            </div>
-            <div class="hor-flex-container input-div">
-                <label for="password">Password</label>
-                <input type="password" , id="password" required>
-            </div>
-        </div>
-        <div class="hor-flex-container">
-            <input class="form-button" type="submit" , value="SIGN UP">
-        </div>
+        </form>
+        
         <div class="hor-flex-container">
             <label>ALREADY HAVE AN ACCOUNT? </label>
             <a href="/elements/login.html">
@@ -66,4 +70,5 @@
     <footer id="footer"></footer>
 </body>
 
+<script src="/js_files/signup.js"></script>
 </html>
