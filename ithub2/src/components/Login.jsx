@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Navigate  } from 'react-router-dom'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
@@ -6,7 +6,7 @@ import {login} from "../actions/auth"
 
 import googleIcon from "../assets/icons/google.png"
 
-const Login = ({ login }) => {
+const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -22,7 +22,9 @@ const Login = ({ login }) => {
         login(email, password)
     }
 
-    // redirect to Home if authenticated
+    if (isAuthenticated){
+        return <Navigate to="/home/" replace={true}/>
+    }
 
     return (
         <>
@@ -37,11 +39,11 @@ const Login = ({ login }) => {
         <form>
             <div id="login-form" className="info_container hor-center-element">
                 <div className="hor-flex-container input-div">
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input placeholder="email@address.com" type="email" id="login-form-email" name="email" value={email} onChange={e => onChange(e)} required/>
                 </div>
                 <div className="hor-flex-container input-div">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
                 </div>
             </div>
@@ -68,7 +70,7 @@ const Login = ({ login }) => {
 }
 
 const mapStateToProps = state => ({
-    // is authenticated
+    isAuthenticated: state.auth.isAuthenticated
 })
 
-export default connect(null, { login })(Login)
+export default connect(mapStateToProps, { login })(Login)

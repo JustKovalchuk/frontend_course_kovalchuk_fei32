@@ -5,10 +5,11 @@ function Courses() {
     return (
         <>
             <h1>COURSES</h1>
+            
             <SearchBar />
-            <div class="center-box">
+            <div className="center-box">
                 <form action="index.php" method="get" title="sort">
-                    <label for="sort">Sort by</label>
+                    <label htmlFor="sort">Sort by</label>
                     <select name="Sortby" id="Sortby">
                         <option value="Popular">Popular</option>
                         <option value="Rating">Rating</option>
@@ -19,7 +20,7 @@ function Courses() {
                 </form>
 
                 <form action="index.php" method="get" title="filter">
-                    <label for="Topic">Topic</label>
+                    <label htmlFor="Topic">Topic</label>
                     <select name="Topic" id="Topic">
                         <option value="Web Development">Web Development</option>
                         <option value="Data Sience">Data Sience</option>
@@ -28,7 +29,7 @@ function Courses() {
                         <option value="Mobile Development">Mobile Development</option>
                     </select>
 
-                    <label for="Rating">Rating</label>
+                    <label htmlFor="Rating">Rating</label>
                     <select name="Rating" id="Rating">
                         <option value="4.5+">4.5+</option>
                         <option value="4+">4+</option>
@@ -37,7 +38,7 @@ function Courses() {
                         <option value="0+" selected>0+</option>
                     </select>
 
-                    <label for="Duration">Duration</label>
+                    <label htmlFor="Duration">Duration</label>
                     <select name="Duration" id="Duration">
                         <option value="1-3 month">1-3 month</option>
                         <option value="1-4 weeks">1-4 weeks</option>
@@ -49,7 +50,7 @@ function Courses() {
                         <option value="0-2 hours" selected>0-2 hours</option>
                     </select>
 
-                    <label for="Price">Price</label>
+                    <label htmlFor="Price">Price</label>
                     <select name="Price" id="Price">
                         <option value="Paid">Paid</option>
                         <option value="Free">Free</option>
@@ -59,7 +60,7 @@ function Courses() {
                     <input type="submit"/>
                 </form>
             </div>
-            <div class="courses-table">
+            <div className="courses-table">
                 <CourseBox />
                 <CourseBox />
                 <CourseBox />
@@ -78,15 +79,15 @@ function Courses() {
             </div>
             <div id="page-selector">
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link">Previous</a>
+                    <ul className="pagination justify-content-center">
+                    <li className="page-item disabled">
+                        <a className="page-link">Previous</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                    <li className="page-item"><a className="page-link" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link" href="#">3</a></li>
+                    <li className="page-item">
+                        <a className="page-link" href="#">Next</a>
                     </li>
                     </ul>
                 </nav>
