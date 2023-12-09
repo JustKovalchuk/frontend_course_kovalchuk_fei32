@@ -8,6 +8,7 @@ import Signup from "./components/Signup"
 import PasswordReset from "./components/Passwors/PasswordReset"
 import PasswordResetConfirm from "./components/Passwors/PaswordResetConfirm"
 import Layout from './hocs/Layout'
+import Activate from './components/Activate'
 
 import { Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -35,7 +36,7 @@ function App(props) {
                     <Route path='/signup/' element={<Signup />} />
                     <Route path='/reset-password/' element={<PasswordReset />} />
                     <Route path='/password/reset/confirm/:uid/:token' element={<PasswordResetConfirm />} />
-                    <Route path='/activate/:uid/:token' element={<Signup />} />
+                    <Route path='/activate/:uid/:token' element={<Activate />} />
 
                     <Route path='/account/' element={<Account />} />
                 </Routes>

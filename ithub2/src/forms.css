@@ -8,6 +8,15 @@
     color: var(--alt-dark);
     font-weight: var(--font-width-semibold);
 }
+.error_container{
+    padding: 1% 1%;
+    margin-top: 1%;
+    width: max-content;
+    max-width: 30%;
+    background-color: var(--error);
+    border-radius: var(--container-border-radius);
+    color: var(--main-light)
+}
 
 .form-button-alt{
     border: none;

@@ -1,5 +1,7 @@
 import { reset_password_confirm } from "../../actions/auth"
 
+import { EmptyPasswordWarning, PasswordLengthWarning, PasswordMatchWarning, TryHideWarning, ResetPasswordConfirmWarning } from '../Warnings/Warning';
+
 import { Navigate, useParams } from 'react-router-dom'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
@@ -20,11 +22,17 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
     const onSubmit = e => {
         e.preventDefault()
 
-        // const uid = props.params.uid
-        // const token = props.params.token
-        console.log(uid, token, new_password, re_new_password)
-        reset_password_confirm(uid, token, new_password, re_new_password)
-        setRequestSent(true)
+        let hasNoWarning = true
+
+        hasNoWarning = TryHideWarning(new_password == '', "password-empty-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(new_password.length < 6, "password-length-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(new_password != re_new_password, "password-match-error-container", hasNoWarning) && hasNoWarning
+        if (hasNoWarning)
+        {
+            let isError = reset_password_confirm(uid, token, new_password, re_new_password)
+            console.log(isError)
+            setRequestSent(!isError)
+        }
     }
 
     if (requestSent){
@@ -33,7 +41,7 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
 
     return (
         <>
-            <h1>Request Password Reset</h1>
+            <h1>Password Reset</h1>
             <form>
                 <div id="login-form" className="info_container hor-center-element">
                     <div className="hor-flex-container input-div">
@@ -45,7 +53,11 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
                         <input type="password" name='re_new_password' value={re_new_password} onChange={e => onChange(e)} minLength="6" required/>
                     </div>
                 </div>
+                <div id="password-reset-confirm-error-container" style={{"display": "none"}}><ResetPasswordConfirmWarning /></div>
+                <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
+                <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
 
+                <div id="password-match-error-container" style={{"display": "none"}}><PasswordMatchWarning /></div>
                 
                 <div className="hor-flex-container">
                     <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>

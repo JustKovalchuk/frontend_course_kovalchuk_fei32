@@ -1,6 +1,7 @@
 import { Link, Navigate  } from 'react-router-dom'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { EmptyEmailWarning, EmptyPasswordWarning, PasswordLengthWarning, LoginWarning, TryHideWarning, EmailFormatWarning } from './Warnings/Warning';
 
 import {login} from "../actions/auth"
 
@@ -18,7 +19,18 @@ const Login = ({ login, isAuthenticated }) => {
     
     const onSubmit = e => {
         e.preventDefault()
-        login(email, password)
+
+        let hasNoWarning = true
+
+        hasNoWarning = TryHideWarning(email == '', "email-empty-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(!email.includes("@"), "email-format-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(password == '', "password-empty-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(password.length < 6, "password-length-error-container", hasNoWarning) && hasNoWarning
+
+        if (hasNoWarning)
+        {
+            login(email, password)
+        }
     }
 
     if (isAuthenticated){
@@ -35,6 +47,7 @@ const Login = ({ login, isAuthenticated }) => {
                 Continue with Google
             </button>
         </div>
+        
         <form>
             <div id="login-form" className="info_container hor-center-element">
                 <div className="hor-flex-container input-div">
@@ -46,11 +59,20 @@ const Login = ({ login, isAuthenticated }) => {
                     <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
                 </div>
             </div>
+            
+            <div id="login-error-container" style={{"display": "none"}}><LoginWarning /></div>
+            <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
+            <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
+            
+            <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
+            <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
 
             <div className="hor-flex-container">
                 <button id="login-button" onClick={e => onSubmit(e)} className="form-button">LOGIN</button>
             </div>
         </form>
+
+
         <div className="hor-flex-container">
             <label>DON'T HAVE AN ACCOUNT?</label>
             <Link to='/signup/'>

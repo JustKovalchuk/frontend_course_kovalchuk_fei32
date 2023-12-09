@@ -5,6 +5,11 @@ import {
     LOGIN_FAIL,
     LOGOUT,
 
+    SIGNUP_SUCCESS,
+    SIGNUP_FAIL,
+    ACTIVATION_SUCCESS,
+    ACTIVATION_FAIL,
+
     USER_LOADED_SUCCESS,
     USER_LOADED_FAIL,
     AUTHENTICATED_SUCCESS,
@@ -15,6 +20,8 @@ import {
     PASSWORD_RESET_SUCCESS,
     PASSWORD_RESET_FAIL
 } from "./types"
+
+import { TryHideWarning } from '../components/Warnings/Warning';
 
 export const checkAuthenticated = () => async dispatch => {
     if (localStorage.getItem('access')){
@@ -97,6 +104,8 @@ export const login = (email, password) => async dispatch => {
 
     const body = JSON.stringify({ email, password });
 
+    let hasNoWarning = true
+    let condition = true
     try {
         const res = await axios.post(`${REACT_APP_API_URL}/auth/jwt/create/`, body, config);
 
@@ -105,13 +114,47 @@ export const login = (email, password) => async dispatch => {
             payload: res.data
         });
 
+        condition = false
         dispatch(load_user());
     } catch (err) {
+        condition = true
         dispatch({
             type: LOGIN_FAIL
         })
     }
-};
+    TryHideWarning(condition, "login-error-container", hasNoWarning)
+}
+export const signup = (first_name, last_name, email, password, re_password) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    const body = JSON.stringify({ first_name, last_name, email, password, re_password });
+    
+    let hasNoWarning = true
+    let condition = true
+    
+    try {
+        const res = await axios.post(`${REACT_APP_API_URL}/auth/users/`, body, config);
+
+        dispatch({
+            type: SIGNUP_SUCCESS,
+            payload: res.data
+        });
+        condition = false
+        dispatch(load_user());
+    } catch (err) {
+        condition = true
+        dispatch({
+            type: SIGNUP_FAIL
+        })
+    }
+    TryHideWarning(condition, "sign-error-container", hasNoWarning)
+
+    return !condition
+}
 
 export const logout = () => async dispatch => {
     dispatch({
@@ -152,17 +195,45 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
 
     const body = JSON.stringify({ uid, token, new_password, re_new_password });
 
-    // try {
-    await axios.post(`${REACT_APP_API_URL}/auth/users/reset_password_confirm/`, body, config);
+    let hasNoWarning = true
+    let condition = true
+    try {
+        await axios.post(`${REACT_APP_API_URL}/auth/users/reset_password_confirm/`, body, config);
 
-    dispatch({
-        type: PASSWORD_RESET_CONFIRM_SUCCESS
+        condition = false
+        dispatch({
+            type: PASSWORD_RESET_CONFIRM_SUCCESS
         });
-    // } catch (err) {
-    //     console.log(err)
-    //     dispatch({
-    //         type: PASSWORD_RESET_CONFIRM_FAIL
-    //     });
-    // }
-};
+    } catch (err) {
+        condition = true
+        dispatch({
+            type: PASSWORD_RESET_CONFIRM_FAIL
+        });
+    }
+    TryHideWarning(condition, "password-reset-confirm-error-container", hasNoWarning)
 
+    return !condition
+}
+
+export const verify = (uid, token) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+
+    const body = JSON.stringify({ uid, token });
+
+    try {
+        await axios.post(`${REACT_APP_API_URL}/auth/users/activation/`, body, config);
+
+        dispatch({
+            type: ACTIVATION_SUCCESS
+        });
+    } catch (err) {
+        dispatch({
+            type: ACTIVATION_FAIL
+        })
+    }
+}

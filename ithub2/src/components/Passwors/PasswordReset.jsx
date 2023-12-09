@@ -1,5 +1,7 @@
 import { reset_password } from "../../actions/auth"
 
+import { EmptyEmailWarning, TryHideWarning, EmailFormatWarning } from '../Warnings/Warning';
+
 import { Navigate  } from 'react-router-dom'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
@@ -17,8 +19,16 @@ const PasswordReset = ({reset_password}) => {
     const onSubmit = e => {
         e.preventDefault()
 
-        reset_password(email)
-        setRequestSent(true)
+        let hasNoWarning = true
+
+        hasNoWarning = TryHideWarning(email == '', "email-empty-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(!email.includes("@"), "email-format-error-container", hasNoWarning) && hasNoWarning
+
+        if (hasNoWarning)
+        {
+            reset_password(email)
+            setRequestSent(true)
+        }
     }
 
     if (requestSent){
@@ -36,6 +46,9 @@ const PasswordReset = ({reset_password}) => {
                     </div>
                 </div>
     
+                <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
+                <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
+
                 <div className="hor-flex-container">
                     <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>
                 </div>
