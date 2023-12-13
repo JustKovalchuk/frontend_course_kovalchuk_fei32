@@ -23,6 +23,11 @@ import {
 
 import { TryHideWarning } from '../components/Warnings/Warning';
 
+export const is_password_valid = (password) => {
+    let regularExpression = /^(?=.*[0-9])(?=.*[~`!@#$%^&*()-_+={};:"<>,./?])[a-zA-Z0-9!~`!@#$%^&*()-_+={};:"<>,./?]{8,16}$/;
+    return regularExpression.test(password)
+}
+
 export const checkAuthenticated = () => async dispatch => {
     if (localStorage.getItem('access')){
         const config = {
@@ -137,15 +142,43 @@ export const signup = (first_name, last_name, email, password, re_password) => a
     let condition = true
     
     try {
-        const res = await axios.post(`${REACT_APP_API_URL}/auth/users/`, body, config);
-
+        const res = await axios.post(`${REACT_APP_API_URL}/auth/users/`, body, config)
         dispatch({
             type: SIGNUP_SUCCESS,
             payload: res.data
         });
         condition = false
         dispatch(load_user());
-    } catch (err) {
+        // .catch(function (error) 
+        // {
+        //     console.log("hadle error")
+        //     if (error.response) {
+        //         console.log("hadle error.response")
+        //         console.log('Error', error.message);
+        //         // The request was made and the server responded with a status code
+        //         // that falls out of the range of 2xx
+        //         console.log(error.response.data);
+        //         console.log(error.response.status);
+        //         console.log(error.response.headers);
+        //     } else if (error.request) {
+        //         console.log("hadle error.request")
+        //         // The request was made but no response was received
+        //         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        //         // http.ClientRequest in node.js
+        //         console.log(error.request);
+        //     } else {
+        //         console.log("hadle error.message")
+        //         // Something happened in setting up the request that triggered an Error
+        //         console.log('Error', error.message);
+        //     }
+        //     console.log(error.config);
+        //     condition = true
+        //     dispatch({
+        //         type: SIGNUP_FAIL
+        //     })
+        // });
+    } catch (err) 
+    {
         condition = true
         dispatch({
             type: SIGNUP_FAIL

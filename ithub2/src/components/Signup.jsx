@@ -2,7 +2,7 @@ import {Link, Navigate} from 'react-router-dom'
 
 import { EmptyEmailWarning, EmptyPasswordWarning, PasswordLengthWarning, PasswordMatchWarning, SignWarning, TryHideWarning, EmailFormatWarning } from './Warnings/Warning';
 
-import { signup } from "../actions/auth"
+import { signup, is_password_valid } from "../actions/auth"
 import { connect } from 'react-redux'
 import { useState } from 'react';
 
@@ -27,15 +27,19 @@ const Signup = ({ signup, isAuthenticated }) => {
         
         let hasNoWarning = true
 
+        TryHideWarning(false, "sign-error-container", hasNoWarning)
+
         hasNoWarning = TryHideWarning(email == '', "email-empty-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(!email.includes("@"), "email-format-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(password == '', "password-empty-error-container", hasNoWarning) && hasNoWarning
-        hasNoWarning = TryHideWarning(password.length < 6, "password-length-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(!is_password_valid(password), "password-length-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(password != re_password, "password-match-error-container", hasNoWarning) && hasNoWarning
 
         if (hasNoWarning)
         {
+            console.log(first_name, last_name, email, password, re_password)
             let isError = signup(first_name, last_name, email, password, re_password)
+            console.log("my l2", isError)
             setAccountCreated(!isError)
         }
     }

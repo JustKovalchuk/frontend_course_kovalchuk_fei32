@@ -2,8 +2,7 @@ import { Link, Navigate  } from 'react-router-dom'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { EmptyEmailWarning, EmptyPasswordWarning, PasswordLengthWarning, LoginWarning, TryHideWarning, EmailFormatWarning } from './Warnings/Warning';
-
-import {login} from "../actions/auth"
+import {login, is_password_valid} from "../actions/auth"
 
 import googleIcon from "../assets/icons/google.png"
 
@@ -22,14 +21,16 @@ const Login = ({ login, isAuthenticated }) => {
 
         let hasNoWarning = true
 
+        TryHideWarning(false, "login-error-container", hasNoWarning)
+
         hasNoWarning = TryHideWarning(email == '', "email-empty-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(!email.includes("@"), "email-format-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(password == '', "password-empty-error-container", hasNoWarning) && hasNoWarning
-        hasNoWarning = TryHideWarning(password.length < 6, "password-length-error-container", hasNoWarning) && hasNoWarning
-
+        hasNoWarning = TryHideWarning(!is_password_valid(password), "password-length-error-container", hasNoWarning) && hasNoWarning
+        
         if (hasNoWarning)
         {
-            login(email, password)
+            console.log(login(email, password))
         }
     }
 

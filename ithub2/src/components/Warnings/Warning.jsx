@@ -5,9 +5,8 @@ import Col from 'react-bootstrap/Col';
 import warningIcon from "../../assets/icons/warning.png"
 
 export const TryHideWarning = (сondition, elementID, hasNoWarning) => {
-    if (сondition){
-        if (hasNoWarning)
-            document.getElementById(elementID).style.display = "block";
+    if (сondition && hasNoWarning){
+        document.getElementById(elementID).style.display = "block";
         return false
     }
     else
@@ -41,5 +40,5 @@ export const ResetPasswordConfirmWarning = () => <Warning warningText='Something
 export const EmptyEmailWarning = () => <Warning warningText='Email field is required!'/>
 export const EmailFormatWarning = () => <Warning warningText='Email format is not correct!'/>
 export const EmptyPasswordWarning = () => <Warning warningText='Password field is required!'/>
-export const PasswordLengthWarning = () => <Warning warningText='Password length should be 6 or more characters!'/>
+export const PasswordLengthWarning = () => <Warning warningText='The password must be from 8 to 16 characters long, contain at least one letter of lowercase and uppercase, a number and a special character (~`!@#$%^&*()-_+={};:"<>,./?)'/>
 export const PasswordMatchWarning = () => <Warning warningText='Passwords not match!'/>

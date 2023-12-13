@@ -1,4 +1,4 @@
-import { reset_password_confirm } from "../../actions/auth"
+import { reset_password_confirm, is_password_valid } from "../../actions/auth"
 
 import { EmptyPasswordWarning, PasswordLengthWarning, PasswordMatchWarning, TryHideWarning, ResetPasswordConfirmWarning } from '../Warnings/Warning';
 
@@ -24,8 +24,10 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
 
         let hasNoWarning = true
 
+        TryHideWarning(false, "password-reset-confirm-error-container", hasNoWarning)
+
         hasNoWarning = TryHideWarning(new_password == '', "password-empty-error-container", hasNoWarning) && hasNoWarning
-        hasNoWarning = TryHideWarning(new_password.length < 6, "password-length-error-container", hasNoWarning) && hasNoWarning
+        hasNoWarning = TryHideWarning(!is_password_valid(password), "password-length-error-container", hasNoWarning) && hasNoWarning
         hasNoWarning = TryHideWarning(new_password != re_new_password, "password-match-error-container", hasNoWarning) && hasNoWarning
         if (hasNoWarning)
         {
