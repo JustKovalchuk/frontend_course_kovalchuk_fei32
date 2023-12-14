@@ -29,7 +29,6 @@ const initialState = {
 export default function(state = initialState, action) {
     const { type, payload } = action
 
-    console.log("reducer auth")
     switch(type) {
         case AUTHENTICATED_SUCCESS:
             return {

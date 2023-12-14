@@ -10,10 +10,8 @@ const initialState = {
 export default function(state = initialState, action) {
     const { type, payload } = action
 
-    console.log("reducer courses")
     switch(type) {
         case LOAD_COURSES_SUCCESS:
-            console.log("payload", payload)
             return {
                 ...state,
                 courses: payload,

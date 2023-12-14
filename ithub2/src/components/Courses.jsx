@@ -1,9 +1,146 @@
-import CourseBox from "./CourseBox/CourseBox"
 import SearchBar from "./Searchbar/SearchBar"
+import {GetCourseBoxes} from "./CourseBox/CourseBox"
+import React, { useState } from 'react';
 
-function Courses() {
+import { connect } from 'react-redux'
+
+import '../index.css'
+
+let cardsToPrint = 3
+
+// const PageController = (props) =>
+// {
+//     const [page, setPage] = useState(1)
+
+//     const selectPage = (e, p) =>
+//     {
+//         if (props.pagesCount < p)
+//             return
+//         if (p < 1)
+//             return
+
+//         console.log("bef pageCourses", pageCourses)
+//         console.log("props.courses", props.courses)
+//         pageCourses = GetCourseBoxes(cardsToPrint, props.courses, p*cardsToPrint)
+//         console.log("aft pageCourses", pageCourses)
+//         setPage(p)
+//         console.log("page", p)
+//     }
+//     const nextPage = (e) =>
+//     {
+//         selectPage(e, page+1)
+//     }
+//     const prevPage = (e) =>
+//     {
+//         selectPage(e, page-1)
+//     }
+
+//     const middlePage =
+//         <>
+//             <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>          
+//             <li className="page-item disabled"><button>...</button></li>
+//             <li className="page-item disabled"><button>{page}</button></li>
+//             <li className="page-item disabled"><button>...</button></li>
+//         </> 
+
+//     const firstPage =
+//     <>                
+//         <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>
+//         <li className="page-item"><button onClick={e => selectPage(e, 2)}>2</button></li>
+//         <li className="page-item disabled"><button>...</button></li>
+//     </> 
+    
+//     const lastPage =
+//     <>
+//         <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>          
+//         <li className="page-item disabled"><button>...</button></li>
+//         <li className="page-item disabled"><button>{page-1}</button></li>
+//         <li className="page-item disabled"><button>{page}</button></li>
+//     </>
+
+//     let pagesSelectTemplate = middlePage
+//     if (page == 1 || page == 2)
+//         pagesSelectTemplate = firstPage
+//     else if (page == props.pagesCount)
+//         pagesSelectTemplate = lastPage
+
+//     return(
+//         <div id="page-selector">
+//             <nav aria-label="Page navigation example">
+//                 <ul className="pagination justify-content-center">
+//                 <li className="page-item">
+//                     <button onClick={e => prevPage(e)}>Previous</button>
+//                 </li>
+//                 {pagesSelectTemplate}
+//                 <li className="page-item">
+//                     <button onClick={e => nextPage(e)}>Next</button>
+//                 </li>
+//                 </ul>
+//             </nav>
+//         </div>
+//     )
+// }
+
+const Courses = ({all_courses}) => 
+{
+    let totalPages = Math.ceil(all_courses.length / cardsToPrint)
+
+    const [page, setPage] = useState(1)
+    let a = GetCourseBoxes(cardsToPrint, all_courses, 0)
+    console.log("a", a)
+    const [pageCourses, setPageCourses] = useState(a)
+
+    const selectPage = (e, p) =>
+    {
+        if (totalPages < p)
+            return
+        if (p < 1)
+            return
+
+        console.log("bef pageCourses", pageCourses)
+        setPageCourses(GetCourseBoxes(cardsToPrint, all_courses, (p-1)*cardsToPrint))
+        console.log("aft pageCourses", pageCourses)
+        setPage(p)
+        console.log("page", p)
+    }
+    const nextPage = (e) =>
+    {
+        selectPage(e, page+1)
+    }
+    const prevPage = (e) =>
+    {
+        selectPage(e, page-1)
+    }
+    
+    const firstPage =
+    <>
+        <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>
+        <li className="page-item"><button onClick={e => selectPage(e, 2)}>2</button></li>
+        <li className="page-item disabled"><button disabled>...</button></li>
+    </> 
+    const middlePage =
+    <>
+        <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>          
+        <li className="page-item disabled"><button disabled>...</button></li>
+        <li className="page-item"><button>{page}</button></li>
+        <li className="page-item disabled"><button disabled>...</button></li>
+    </> 
+    const lastPage =
+    <>
+        <li className="page-item"><button onClick={e => selectPage(e, 1)}>1</button></li>          
+        <li className="page-item disabled"><button disabled>...</button></li>
+        <li className="page-item"><button onClick={e => selectPage(e, page-1)}>{page-1}</button></li>
+        <li className="page-item disabled"><button disabled>{page}</button></li>
+    </>
+
+    let pagesSelectTemplate = middlePage
+    if (page == 1 || page == 2)
+        pagesSelectTemplate = firstPage
+    else if (page == totalPages)
+        pagesSelectTemplate = lastPage
+    
     return (
-        <>
+        <div className="body-container">
             <h1>COURSES</h1>
             
             <SearchBar />
@@ -61,40 +198,27 @@ function Courses() {
                 </form>
             </div>
             <div className="courses-table">
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-                <CourseBox />
-
+                {pageCourses}
             </div>
             <div id="page-selector">
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
-                    <li className="page-item disabled">
-                        <a className="page-link">Previous</a>
-                    </li>
-                    <li className="page-item"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li>
                     <li className="page-item">
-                        <a className="page-link" href="#">Next</a>
+                        <button onClick={e => prevPage(e)}>Previous</button>
+                    </li>
+                    {pagesSelectTemplate}
+                    <li className="page-item">
+                        <button onClick={e => nextPage(e)}>Next</button>
                     </li>
                     </ul>
                 </nav>
             </div>
-        </>
-        
+        </div>
       );
 }
 
-export default Courses
+const mapStateToProps = state => ({
+    all_courses: state.courses.courses
+})
+
+export default connect(mapStateToProps)(Courses)

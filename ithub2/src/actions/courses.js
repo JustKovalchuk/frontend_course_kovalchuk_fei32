@@ -42,7 +42,6 @@ export const get_all_courses = () => async dispatch => {
     console.log("working")
     try {
         let res = axios.get(`${REACT_APP_API_URL}/courses/all_courses/`, config).then(function (value) {
-                console.log("working2")
                 console.log(value.data)
                 dispatch({
                     type: LOAD_COURSES_SUCCESS,

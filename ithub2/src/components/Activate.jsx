@@ -20,15 +20,15 @@ const Activate = ({ verify }) => {
     }
 
     return (
-        <>
-        <h1>Verify your Account</h1>
+        <div className="body-container">
+            <h1>Verify your Account</h1>
 
-        <div className="hor-flex-container">
-            <button className="form-button-alt" onClick={verify_account}>
-                Verify
-            </button>
+            <div className="hor-flex-container">
+                <button className="form-button-alt" onClick={verify_account}>
+                    Verify
+                </button>
+            </div>
         </div>
-    </>
     )
     
 }

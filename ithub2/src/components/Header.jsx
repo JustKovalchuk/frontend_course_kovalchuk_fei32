@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, Navigate  } from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
 
 import userIcon from "../assets/icons/user.svg"
 
@@ -44,7 +45,7 @@ const Header = ({ logout, isAuthenticated }) => {
     );
 
     return (
-        <>
+        <Container fluid className='bg-primary header'>
             <Navbar expand="md" className="bg-primary navbar-dark p-2">
                 <Link className="link" to="/home"><Navbar.Brand><strong>ITHUB</strong></Navbar.Brand></Link>
                 <Form className="d-flex">
@@ -68,8 +69,7 @@ const Header = ({ logout, isAuthenticated }) => {
                     {isAuthenticated ? authFullLinks() : guestFullLinks()}
                 </Nav>
             </Navbar>
-            {/* {redirect ? <Navigate to='/' /> : <Fragment></Fragment>} */}
-        </>
+        </Container>
     )
 }
 

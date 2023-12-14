@@ -32,19 +32,12 @@
 *{
     font-weight: var(--font-width-regular);
 }
-
-body {
+#root{
     margin: 0px;
     background: var(--main-light);
-    height: 100vh;
     display: flex;
     flex-direction: column;
-}
-main{
-    margin: 5%;
-}
-#footer {
-    margin-top: auto;
+    min-height: 100vh;
 }
 
 p{
@@ -61,9 +54,11 @@ label{
 }
 
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, .course-name{
     color: var(--main-dark);
     font-weight: var(--font-width-bold);
+}
+h1, h2{
     text-align: center;
 }
 h3{
@@ -149,6 +144,8 @@ button{
 
 
 .courses-table{
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
 }
@@ -164,4 +161,8 @@ button{
     height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+.body-container{
+    flex-grow: 1;
 }

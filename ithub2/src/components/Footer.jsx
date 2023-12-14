@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 
 import {Link} from 'react-router-dom'
 
-const Footer = () => <>
-    <Container fluid className='bg-primary'>
+const Footer = () => 
+    <Container fluid className='bg-primary footer'>
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
             <p className="col-md-4 mb-0 text-white">© 2023 ITHUB, Inc</p>
         
@@ -17,6 +17,5 @@ const Footer = () => <>
             </ul>
         </footer>
     </Container>
-</>
 
 export default Footer

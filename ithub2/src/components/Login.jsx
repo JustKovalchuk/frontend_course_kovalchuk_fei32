@@ -39,54 +39,54 @@ const Login = ({ login, isAuthenticated }) => {
     }
 
     return (
-        <>
-        <h1>LOG IN COURSERA</h1>
-
-        <div className="hor-flex-container">
-            <button className="form-button-alt">
-                <img className="icon" src={googleIcon} alt="user icon"/>
-                Continue with Google
-            </button>
-        </div>
-        
-        <form>
-            <div id="login-form" className="info_container hor-center-element">
-                <div className="hor-flex-container input-div">
-                    <label htmlFor="email">Email</label>
-                    <input placeholder="email@address.com" type="email" id="login-form-email" name="email" value={email} onChange={e => onChange(e)} required/>
-                </div>
-                <div className="hor-flex-container input-div">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
-                </div>
-            </div>
-            
-            <div id="login-error-container" style={{"display": "none"}}><LoginWarning /></div>
-            <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
-            <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
-            
-            <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
-            <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
+        <div className="body-container">
+            <h1>LOG IN COURSERA</h1>
 
             <div className="hor-flex-container">
-                <button id="login-button" onClick={e => onSubmit(e)} className="form-button">LOGIN</button>
+                <button className="form-button-alt">
+                    <img className="icon" src={googleIcon} alt="user icon"/>
+                    Continue with Google
+                </button>
             </div>
-        </form>
+            
+            <form>
+                <div id="login-form" className="info_container hor-center-element">
+                    <div className="hor-flex-container input-div">
+                        <label htmlFor="email">Email</label>
+                        <input placeholder="email@address.com" type="email" id="login-form-email" name="email" value={email} onChange={e => onChange(e)} required/>
+                    </div>
+                    <div className="hor-flex-container input-div">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
+                    </div>
+                </div>
+                
+                <div id="login-error-container" style={{"display": "none"}}><LoginWarning /></div>
+                <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
+                <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
+                
+                <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
+                <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
+
+                <div className="hor-flex-container">
+                    <button id="login-button" onClick={e => onSubmit(e)} className="form-button">LOGIN</button>
+                </div>
+            </form>
 
 
-        <div className="hor-flex-container">
-            <label>DON'T HAVE AN ACCOUNT?</label>
-            <Link to='/signup/'>
-                <u><p className="log-sign-label">SIGNUP</p></u>
-            </Link>
+            <div className="hor-flex-container">
+                <label>DON'T HAVE AN ACCOUNT?</label>
+                <Link to='/signup/'>
+                    <u><p className="log-sign-label">SIGNUP</p></u>
+                </Link>
+            </div>
+            <div className="hor-flex-container">
+                <label>FORGOT YOUR PASSWORD?</label>
+                <Link to='/reset-password/'>
+                    <u><p className="log-sign-label">RESET PASSWORD</p></u>
+                </Link>
+            </div>
         </div>
-        <div className="hor-flex-container">
-            <label>FORGOT YOUR PASSWORD?</label>
-            <Link to='/reset-password/'>
-                <u><p className="log-sign-label">RESET PASSWORD</p></u>
-            </Link>
-        </div>
-    </>
     )
     
 }

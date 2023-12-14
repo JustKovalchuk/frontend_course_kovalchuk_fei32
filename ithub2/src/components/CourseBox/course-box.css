@@ -1,13 +1,13 @@
-.course-box-container{
-    max-width: 33%;
-    min-width: 20%;
-}
 .course-box{
     border-radius: var(--course-box-border-radius);
     border-width: 0px;
     background-color: var(--main);
     overflow: hidden;
-    margin: 5%;
+    max-width: 350px;
+    min-width: 350px;
+    max-height: 250px;
+    min-height: 250px;
+    margin: 1vw;
 }
 .course-box-items{
     padding: 1%;
@@ -16,14 +16,18 @@
     margin-bottom: 10%;
 }
 .course-img-container{
-    height: 50%;
+    height: 150px;
 }
 .course-img-container img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
 .course-name{
-    display: flex;
-    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0px;
+    /* height: 25px; */
 }

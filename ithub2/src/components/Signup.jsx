@@ -51,7 +51,7 @@ const Signup = ({ signup, isAuthenticated }) => {
         return <Navigate to="/login/" replace={true}/>
     }
     return (
-        <>
+        <div className="body-container">
             {/* <div className="hor-flex-container input-div">
                 <label htmlFor="phone">Phone</label>
                 <input id="signup-form-phone" type="tel" placeholder="555 555 5555" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" onChange={e => onChange(e)} required/>
@@ -103,7 +103,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                     <u><p className="log-sign-label"> LOG IN</p></u>
                 </Link>
             </div>
-        </>
+        </div>
     )
 } 
 

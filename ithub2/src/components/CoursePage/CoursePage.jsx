@@ -7,7 +7,7 @@ import userIcon from "../../assets/icons/user.svg"
 
 function CoursePage() {
     return (
-        <>
+        <div className="body-container">
             <h1>Python Development</h1>
             <div className="course-page-container">
                 <div className="course-page-header-container">
@@ -100,8 +100,7 @@ function CoursePage() {
             <div className="course-page-container-child">
                 <button className="hor-center-element" id="enroll-button">Enroll now</button>
             </div>
-        </>
-        
+        </div>
     );
 }
 

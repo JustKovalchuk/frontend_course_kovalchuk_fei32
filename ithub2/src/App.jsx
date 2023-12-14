@@ -1,4 +1,5 @@
 import Footer from "./components/Footer"
+import Header from "./components/Header"
 import MainPage from "./components/MainPage"
 import Courses from "./components/Courses"
 import CoursePage from "./components/CoursePage/CoursePage"
@@ -17,24 +18,23 @@ import {get_all_courses} from "./actions/courses"
 import React from 'react';
 
 import "./alignment.css"
-
-
-var courses = []
+import './index.css'
+import './forms.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App({get_all_courses}) {
     get_all_courses()
     
     return (
         <>
+        <Header />
         <Layout>
             <Routes>
                 <Route path='/' >
                     <Route index element={<MainPage />} />
                 </Route>
-                <Route path='/course/' >
-                    <Route index element={<CoursePage />} />
-                </Route>
                 <Route path='/home/' element={<MainPage />} />
+                <Route path='/course/:id' element={<CoursePage />} />
                 <Route path='/courses/' element={<Courses />} />
                 <Route path='/login/' element={<Login />} />
                 <Route path='/signup/' element={<Signup />} />

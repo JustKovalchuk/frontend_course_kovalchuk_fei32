@@ -4,7 +4,7 @@ import userIcon from "../assets/icons/user.svg"
 
 function Account() {
     return (
-        <>
+        <div className="body-container">
             <h1>Profile</h1>
             <div>
                 <h2>Account Info</h2>
@@ -55,7 +55,7 @@ function Account() {
                 </div>
                 
             </div>
-        </>
+        </div>
     );
 }
 
