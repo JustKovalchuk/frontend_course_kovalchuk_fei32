@@ -11,16 +11,18 @@ import PasswordResetConfirm from "./components/Passwors/PaswordResetConfirm"
 import Layout from './hocs/Layout'
 import Activate from './components/Activate'
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {get_all_courses} from "./actions/courses"
 
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 
 import "./alignment.css"
 import './index.css'
 import './forms.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+// export { Link, Router,  } from '@reach/router'
 
 function App({get_all_courses}) {
     get_all_courses()
@@ -28,6 +30,7 @@ function App({get_all_courses}) {
     return (
         <>
         <Header />
+        <ScrollToTop />
         <Layout>
             <Routes>
                 <Route path='/' >
@@ -50,5 +53,16 @@ function App({get_all_courses}) {
         
       );
 }
+
+function ScrollToTop() {
+    const { pathname } = useLocation()
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
+
+    return null
+}
+
 export default connect(null, { get_all_courses })(App)
 // export default App

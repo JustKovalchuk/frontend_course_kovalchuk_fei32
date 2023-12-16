@@ -16,8 +16,9 @@
 }
 
 #course-page-img{
-    max-width: 100%;
-    max-height: auto;
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
 }
 #course-page-description-text{
     text-align: justify;
@@ -43,6 +44,10 @@
 
 
 /* rating */
+.rating-icon{
+    height: 45px;
+    width: 45px;
+}
 .rating{
     height: 45px;
 }
