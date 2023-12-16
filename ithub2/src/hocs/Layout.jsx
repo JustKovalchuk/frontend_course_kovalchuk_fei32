@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Header from "../components/Header"
+import Header from "../components/Header/Header"
 // import Navbar from '../components/Navbar'
 import { connect } from 'react-redux'
 import { checkAuthenticated, load_user } from '../actions/auth'

@@ -5,7 +5,7 @@ import userIcon from "../assets/icons/user.svg"
 function Account() {
     return (
         <div className="body-container">
-            <h1>Profile</h1>
+            <h1 className="fw-bold lh-1 my-3">Profile</h1>
             <div>
                 <h2>Account Info</h2>
                 <div className="hor-center-element info_container">

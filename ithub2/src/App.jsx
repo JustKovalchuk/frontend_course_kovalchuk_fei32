@@ -1,5 +1,5 @@
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import Footer from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
 import MainPage from "./components/MainPage"
 import Courses from "./components/Courses"
 import CoursePage from "./components/CoursePage/CoursePage"

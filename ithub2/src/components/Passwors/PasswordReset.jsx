@@ -37,22 +37,24 @@ const PasswordReset = ({reset_password}) => {
 
     return (
         <>
-            <h1>Request Password Reset</h1>
-            <form>
-                <div id="login-form" className="info_container hor-center-element">
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="email">Email</label>
-                        <input placeholder="email@address.com" type="email" name="email" value={email} onChange={e => onChange(e)} required/>
+            <div className="body-container">
+                <h1 className="fw-bold lh-1 my-3">Request Password Reset</h1>
+                <form>
+                    <div id="login-form" className="info_container hor-center-element">
+                        <div className="hor-flex-container input-div">
+                            <label htmlFor="email">Email</label>
+                            <input placeholder="email@address.com" type="email" name="email" value={email} onChange={e => onChange(e)} required/>
+                        </div>
                     </div>
-                </div>
-    
-                <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
-                <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
+        
+                    <div id="email-empty-error-container" style={{"display": "none"}}><EmptyEmailWarning /></div>
+                    <div id="email-format-error-container" style={{"display": "none"}}><EmailFormatWarning /></div>
 
-                <div className="hor-flex-container">
-                    <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>
-                </div>
-            </form>
+                    <div className="hor-flex-container">
+                        <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>
+                    </div>
+                </form>
+            </div>
         </>
     )
 }

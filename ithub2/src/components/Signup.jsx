@@ -56,7 +56,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                 <label htmlFor="phone">Phone</label>
                 <input id="signup-form-phone" type="tel" placeholder="555 555 5555" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" onChange={e => onChange(e)} required/>
             </div> */}
-            <h1>SIGN UP COURSERA</h1>
+            <h1 className="fw-bold lh-1 my-3">SIGN UP COURSERA</h1>
             
             <form>
                 <div id="signup-form" className="info_container hor-center-element">

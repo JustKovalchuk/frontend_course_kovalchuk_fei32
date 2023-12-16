@@ -40,14 +40,14 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <div className="body-container">
-            <h1>LOG IN COURSERA</h1>
+            <h1 className="fw-bold lh-1 my-3">LOG IN COURSERA</h1>
 
-            <div className="hor-flex-container">
+            {/* <div className="hor-flex-container">
                 <button className="form-button-alt">
                     <img className="icon" src={googleIcon} alt="user icon"/>
                     Continue with Google
                 </button>
-            </div>
+            </div> */}
             
             <form>
                 <div id="login-form" className="info_container hor-center-element">

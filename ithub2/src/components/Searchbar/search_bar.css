@@ -1,4 +1,23 @@
-.search-bar{
+.container-input
+{
+    display: flex;
+    justify-content: center;
+}
+.input {
+    width: 40%;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 3px var(--main-dark);
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+}
+
+.input:focus {
+    opacity: 1;
+    width: 60%;
+}
+/* .search-bar{
     overflow: hidden;
     margin: 0% 30%;
     height: auto;
@@ -27,4 +46,4 @@
 }
 .search-bar .icon{
     padding: 2%;
-}
+} */

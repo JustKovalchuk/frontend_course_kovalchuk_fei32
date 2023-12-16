@@ -2,9 +2,11 @@ import Container from 'react-bootstrap/Container';
 
 import {Link} from 'react-router-dom'
 
+import "./footer.css"
+
 const Footer = () => 
-    <Container fluid className='bg-primary footer'>
-        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+    <Container fluid className='footer'>
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3">
             <p className="col-md-4 mb-0 text-white">© 2023 ITHUB, Inc</p>
         
             {/* <!-- <a href="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">

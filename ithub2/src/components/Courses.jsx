@@ -2,12 +2,31 @@ import SearchBar from "./Searchbar/SearchBar"
 import {GetCourseBoxes} from "./CourseBox/CourseBox"
 import React, { useState } from 'react';
 
+
 import { connect } from 'react-redux'
 
 import '../index.css'
+import './select.css'
 
-let cardsToPrint = 3
+let cardsToPrint = 5
 
+const SelectComponent = (props) => {
+    let items = []
+    for (let i in props.items)
+        items.push(
+            <label className="radio">
+                <input type="radio" name="radio" defaultChecked=""/>
+                <span className="name">{props.items[i]}</span>
+            </label>)
+    
+    return(
+        <>
+           <p><strong>{props.name}</strong></p>
+            <div className="radio-inputs">
+                {items}
+            </div>
+        </>)
+}
 
 const Courses = ({all_courses}) => 
 {
@@ -68,41 +87,48 @@ const Courses = ({all_courses}) =>
     
     return (
         <div className="body-container">
-            <h1>COURSES</h1>
             
-            <SearchBar />
+            <h1 className="fw-bold lh-1 my-3"> COURSES</h1>
+            <div>
+                <SearchBar className="hor-center-element"/>
+            </div>
             <div className="center-box">
                 <form action="index.php" method="get" title="sort">
-                    <label htmlFor="sort">Sort by</label>
+                    {/* <SelectComponent name="Sort by" items={["Popular", "Rating", "Newest", "Price (low)", "Price (high)"]}/> */}
+                    {/* <label htmlFor="sort">Sort by</label>
                     <select name="Sortby" id="Sortby">
                         <option value="Popular">Popular</option>
                         <option value="Rating">Rating</option>
                         <option value="Newest" selected>Newest</option>
                         <option value="Price (low)">Price (low)</option>
                         <option value="Price (high)">Price (high)</option>
-                    </select>
+                    </select> */}
                 </form>
 
                 <form action="index.php" method="get" title="filter">
-                    <label htmlFor="Topic">Topic</label>
+                    {/* <SelectComponent name="Topic" items={["Web Development", "Data Sience", "Programming Languages", "Game Development", "Mobile Development"]}/> */}
+                    {/* <label htmlFor="Topic">Topic</label>
                     <select name="Topic" id="Topic">
                         <option value="Web Development">Web Development</option>
                         <option value="Data Sience">Data Sience</option>
                         <option value="Programming Languages" selected>Programming Languages</option>
                         <option value="Game Development">Game Development</option>
                         <option value="Mobile Development">Mobile Development</option>
-                    </select>
+                    </select> */}
 
-                    <label htmlFor="Rating">Rating</label>
+                    {/* <SelectComponent name="Rating" items={["4.5+", "4+", "3.5+", "3+", "0+"]}/> */}
+                    
+                    {/* <label htmlFor="Rating">Rating</label>
                     <select name="Rating" id="Rating">
                         <option value="4.5+">4.5+</option>
                         <option value="4+">4+</option>
                         <option value="3.5+">3.5+</option>
                         <option value="3+">3+</option>
                         <option value="0+" selected>0+</option>
-                    </select>
+                    </select> */}
 
-                    <label htmlFor="Duration">Duration</label>
+                    {/* <SelectComponent name="Duration" items={["1-3 month", "1-4 weeks", "1-7 days", "12-24 hours", "8-12 hours", "4-8 hours", "2-4 hours", "0-2 hours"]}/> */}
+                    {/* <label htmlFor="Duration">Duration</label>
                     <select name="Duration" id="Duration">
                         <option value="1-3 month">1-3 month</option>
                         <option value="1-4 weeks">1-4 weeks</option>
@@ -112,16 +138,17 @@ const Courses = ({all_courses}) =>
                         <option value="4-8 hours">4-8 hours</option>
                         <option value="2-4 hours">2-4 hours</option>
                         <option value="0-2 hours" selected>0-2 hours</option>
-                    </select>
-
-                    <label htmlFor="Price">Price</label>
+                    </select> */}
+                    
+                    {/* <SelectComponent name="Price" items={["Paid", "Free"]}/> */}
+                    {/* <label htmlFor="Price">Price</label>
                     <select name="Price" id="Price">
                         <option value="Paid">Paid</option>
                         <option value="Free">Free</option>
-                    </select>
+                    </select> */}
 
-                    <input type="reset"/>
-                    <input type="submit"/>
+                    {/* <input type="reset"/>
+                    <input type="submit"/> */}
                 </form>
             </div>
             <div className="courses-table">

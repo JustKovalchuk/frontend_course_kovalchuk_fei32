@@ -139,7 +139,7 @@ const CoursePage = () => {
                 </Accordion>
             </div>
             <div className="course-page-container-child">
-                <button className="hor-center-element" id="enroll-button">Enroll now</button>
+                <button className="hor-center-element general-btn">Enroll now</button>
             </div>
         </div>
     );

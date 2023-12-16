@@ -43,28 +43,30 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
 
     return (
         <>
-            <h1>Password Reset</h1>
-            <form>
-                <div id="login-form" className="info_container hor-center-element">
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="new_password">New Password</label>
-                        <input type="password" name='new_password' value={new_password} onChange={e => onChange(e)} minLength="6" required/>
+            <div className="body-container">
+                <h1 className="fw-bold lh-1 my-3">Password Reset</h1>
+                <form>
+                    <div id="login-form" className="info_container hor-center-element">
+                        <div className="hor-flex-container input-div">
+                            <label htmlFor="new_password">New Password</label>
+                            <input type="password" name='new_password' value={new_password} onChange={e => onChange(e)} minLength="6" required/>
+                        </div>
+                        <div className="hor-flex-container input-div">
+                            <label htmlFor="re_new_password">Confirm New Password</label>
+                            <input type="password" name='re_new_password' value={re_new_password} onChange={e => onChange(e)} minLength="6" required/>
+                        </div>
                     </div>
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="re_new_password">Confirm New Password</label>
-                        <input type="password" name='re_new_password' value={re_new_password} onChange={e => onChange(e)} minLength="6" required/>
-                    </div>
-                </div>
-                <div id="password-reset-confirm-error-container" style={{"display": "none"}}><ResetPasswordConfirmWarning /></div>
-                <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
-                <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
+                    <div id="password-reset-confirm-error-container" style={{"display": "none"}}><ResetPasswordConfirmWarning /></div>
+                    <div id="password-empty-error-container" style={{"display": "none"}}><EmptyPasswordWarning /></div>
+                    <div id="password-length-error-container" style={{"display": "none"}}><PasswordLengthWarning /></div>
 
-                <div id="password-match-error-container" style={{"display": "none"}}><PasswordMatchWarning /></div>
-                
-                <div className="hor-flex-container">
-                    <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>
-                </div>
-            </form>
+                    <div id="password-match-error-container" style={{"display": "none"}}><PasswordMatchWarning /></div>
+                    
+                    <div className="hor-flex-container">
+                        <button onClick={e => onSubmit(e)} className="form-button">RESET PASSWORD</button>
+                    </div>
+                </form>
+            </div>
         </>
     )
 }

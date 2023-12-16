@@ -31,16 +31,6 @@
     flex-direction: row-reverse;
 }
 
-#enroll-button{
-    background-color: var(--main-dark);
-    color: var(--alt-light);
-    font-size: var(--font-size-p);
-    font-weight: var(--font-width-bold);
-
-    height: 50px;
-    width: 200px;
-}
-
 
 
 /* rating */

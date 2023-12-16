@@ -6,16 +6,16 @@ import REACT_APP_API_URL from '../../../consts'
 import boxIng from "../../assets/images/course-cover.png"
 import userIcon from "../../assets/icons/user.svg"
 
-
 export const GetCourseBoxes = (count, all_courses, strat=0) =>
 {
     const items = []
     for (let i = 0; i < count; i++){
         if (all_courses.length <= i + strat)
             break
-
         let info = all_courses[i + strat].fields
-        items.push(<CourseBox title={info.title} image={info.image} id={info.url_text}/>)
+        items.push(
+            <CourseBox title={info.title} image={info.image} id={info.url_text}/>
+        )
     }
 
     return <>{items}</>

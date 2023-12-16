@@ -3,11 +3,19 @@
     border-width: 0px;
     background-color: var(--main);
     overflow: hidden;
-    max-width: 350px;
-    min-width: 350px;
+    
+    max-width: 300px;
+    min-width: 300px;
     max-height: 250px;
     min-height: 250px;
     margin: 1vw;
+}
+
+.courses-table{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .course-box-items{
     padding: 1%;
