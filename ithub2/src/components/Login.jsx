@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { EmptyEmailWarning, EmptyPasswordWarning, PasswordLengthWarning, LoginWarning, TryHideWarning, EmailFormatWarning } from './Warnings/Warning';
 import {login, is_password_valid} from "../actions/auth"
 
-import googleIcon from "../assets/icons/google.png"
-
 const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: '',
@@ -40,7 +38,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <div className="body-container">
-            <h1 className="fw-bold lh-1 my-3">LOG IN COURSERA</h1>
+            <h1 className="fw-bold lh-1 my-3">LOG IN ITHUB</h1>
 
             {/* <div className="hor-flex-container">
                 <button className="form-button-alt">

@@ -8,11 +8,6 @@ import rootReducer from "./reducers"
 const initialState = {}
 
 const middleware = [thunk]
-// const composeEnhancers = composeWithDevTools({ 
-//     actionCreators, 
-//     trace: true, 
-//     traceLimit: 25 
-// }); 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
 
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ 

@@ -92,4 +92,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(MainPage)
-// export default MainPage

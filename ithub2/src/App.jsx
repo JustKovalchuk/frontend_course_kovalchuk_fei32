@@ -22,8 +22,6 @@ import './index.css'
 import './forms.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// export { Link, Router,  } from '@reach/router'
-
 function App({get_all_courses}) {
     get_all_courses()
     
@@ -65,4 +63,3 @@ function ScrollToTop() {
 }
 
 export default connect(null, { get_all_courses })(App)
-// export default App
