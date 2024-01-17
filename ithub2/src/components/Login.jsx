@@ -49,14 +49,16 @@ const Login = ({ login, isAuthenticated }) => {
             
             <form>
                 <div id="login-form" className="info_container hor-center-element">
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="email">Email</label>
-                        <input placeholder="email@address.com" type="email" id="login-form-email" name="email" value={email} onChange={e => onChange(e)} required/>
-                    </div>
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
-                    </div>
+                    <form>
+                        <div className="input-div">
+                            <label htmlFor="email">Email</label>
+                            <input placeholder="email@address.com" type="email" id="login-form-email" name="email" value={email} onChange={e => onChange(e)} required/>
+                        </div>
+                        <div className="input-div">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" id="login-form-password" name='password' value={password} onChange={e => onChange(e)} minLength="6" required/>
+                        </div>
+                    </form>
                 </div>
                 
                 <div id="login-error-container" style={{"display": "none"}}><LoginWarning /></div>

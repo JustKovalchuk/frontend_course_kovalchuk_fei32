@@ -60,27 +60,29 @@ const Signup = ({ signup, isAuthenticated }) => {
             
             <form>
                 <div id="signup-form" className="info_container hor-center-element">
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="first name">First name</label>
-                        <input type="text" placeholder="James" name="first_name" onChange={e => onChange(e)} required/>
-                    </div>
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="last name">Last name</label>
-                        <input type="text" placeholder="Anderson" name="last_name" onChange={e => onChange(e)} required/>
-                    </div>
+                    <form>
+                        <div className="input-div">
+                            <label htmlFor="first name">First name</label>
+                            <input type="text" placeholder="James" name="first_name" onChange={e => onChange(e)} required/>
+                        </div>
+                        <div className="input-div">
+                            <label htmlFor="last name">Last name</label>
+                            <input type="text" placeholder="Anderson" name="last_name" onChange={e => onChange(e)} required/>
+                        </div>
 
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" placeholder="email@address.com" name="email" onChange={e => onChange(e)} required/>
-                    </div>
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" onChange={e => onChange(e)} required/>
-                    </div>
-                    <div className="hor-flex-container input-div">
-                        <label htmlFor="password">Confirm Password</label>
-                        <input type="password" name="re_password" onChange={e => onChange(e)} required/>
-                    </div>
+                        <div className="input-div">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" placeholder="email@address.com" name="email" onChange={e => onChange(e)} required/>
+                        </div>
+                        <div className="input-div">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" name="password" onChange={e => onChange(e)} required/>
+                        </div>
+                        <div className="input-div">
+                            <label htmlFor="password">Confirm Password</label>
+                            <input type="password" name="re_password" onChange={e => onChange(e)} required/>
+                        </div>
+                    </form>
                 </div>
 
                 <div id="sign-error-container" style={{"display": "none"}}><SignWarning /></div>

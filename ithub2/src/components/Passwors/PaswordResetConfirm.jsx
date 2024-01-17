@@ -47,11 +47,11 @@ const PasswordResetConfirm = ({props, reset_password_confirm}) => {
                 <h1 className="fw-bold lh-1 my-3">Password Reset</h1>
                 <form>
                     <div id="login-form" className="info_container hor-center-element">
-                        <div className="hor-flex-container input-div">
+                        <div className="input-div">
                             <label htmlFor="new_password">New Password</label>
                             <input type="password" name='new_password' value={new_password} onChange={e => onChange(e)} minLength="6" required/>
                         </div>
-                        <div className="hor-flex-container input-div">
+                        <div className="input-div">
                             <label htmlFor="re_new_password">Confirm New Password</label>
                             <input type="password" name='re_new_password' value={re_new_password} onChange={e => onChange(e)} minLength="6" required/>
                         </div>

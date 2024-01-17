@@ -83,7 +83,7 @@ const CoursePage = () => {
     
     return (
         <div className="body-container">
-            <h1>{courseInfo.title}</h1>
+            <h1 className="fw-bold lh-1 my-3">{courseInfo.title}</h1>
             <div className="course-page-container">
                 <div className="course-page-header-container">
                     <div className="course-page-header-container-child">

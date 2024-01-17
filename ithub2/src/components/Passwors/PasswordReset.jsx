@@ -41,7 +41,7 @@ const PasswordReset = ({reset_password}) => {
                 <h1 className="fw-bold lh-1 my-3">Request Password Reset</h1>
                 <form>
                     <div id="login-form" className="info_container hor-center-element">
-                        <div className="hor-flex-container input-div">
+                        <div className="input-div">
                             <label htmlFor="email">Email</label>
                             <input placeholder="email@address.com" type="email" name="email" value={email} onChange={e => onChange(e)} required/>
                         </div>
